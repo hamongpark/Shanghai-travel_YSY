@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>상하이 가족여행</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f3ee; --card:#ffffff; --ink:#1f2328; --muted:#6b7280; --line:#e7e2da;
+    --d1:#e4572e; --d2:#2e86ab; --d3:#7b4fd6; --d4:#6b7280;
+    --tag:#f1ede6;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#16181c; --card:#1f2228; --ink:#eceff3; --muted:#a3aab5; --line:#30343c; --tag:#2a2e35;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#16181c; --card:#1f2228; --ink:#eceff3; --muted:#a3aab5; --line:#30343c; --tag:#2a2e35;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans KR","WenQuanYi Zen Hei",system-ui,sans-serif;line-height:1.5}
+  .wrap{max-width:1100px;margin:0 auto;padding:32px 16px 48px}
+  header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:24px}
+  h1{font-size:34px;font-weight:900;margin:0;letter-spacing:-.5px}
+  h1 small{display:block;font-size:14px;font-weight:500;color:var(--muted);letter-spacing:0}
+  .badge{display:inline-block;background:var(--tag);border-radius:999px;padding:4px 12px;font-size:13px;margin:2px 4px 2px 0}
+  .draft{background:#ffe08a;color:#5a4400;font-weight:700}
+  .summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
+  .sum{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;border-top:5px solid var(--c)}
+  .sum .d{font-size:12px;color:var(--muted);font-weight:700}
+  .sum .t{font-size:17px;font-weight:900;margin:2px 0}
+  .sum .s{font-size:13px;color:var(--muted)}
+  .day{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:18px;overflow:hidden}
+  .dayhead{background:var(--c);color:#fff;padding:12px 18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  .dayhead b{font-size:18px}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{padding:9px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  th{font-size:12px;color:var(--muted);font-weight:700;background:var(--tag)}
+  td.time{white-space:nowrap;font-weight:700;width:110px}
+  td.move{color:var(--muted);font-size:13px;width:200px}
+  tr:last-child td{border-bottom:0}
+  .q{color:var(--d1);font-weight:700}
+  .note{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+  .note h3{margin:0 0 8px;font-size:16px}
+  .note ul{margin:0;padding-left:18px;font-size:14px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media (max-width:760px){
+    .summary{grid-template-columns:1fr 1fr}
+    .grid2{grid-template-columns:1fr}
+    td.move{width:auto}
+    th:nth-child(3),td.move{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>🇨🇳 상하이 가족여행 <small>2026.11.14(토) – 11.17(화) · 3박 4일</small></h1>
+      <div style="margin-top:8px">
+        <span class="badge draft">초안 v0.1</span>
+        <span class="badge">👨‍👩‍👦‍👧 부부 + 아들 9세 + 딸 7세</span>
+        <span class="badge">🏨 Liuhe Building 10F, 云南北路 59 (황푸구)</span>
+      </div>
+    </div>
+    <div style="font-size:13px;color:var(--muted);text-align:right">
+      ✈️ PVG 도착 11/14 13:10<br>✈️ PVG 출발 11/17 08:25
+    </div>
+  </header>
+
+  <section class="summary">
+    <div class="sum" style="--c:var(--d1)"><div class="d">DAY 1 · 11/14 토</div><div class="t">도착 &amp; 와이탄 야경</div><div class="s">난징동루 → 와이탄 → 황푸강 유람선</div></div>
+    <div class="sum" style="--c:var(--d2)"><div class="d">DAY 2 · 11/15 일</div><div class="t">예원 &amp; 루자쭈이</div><div class="s">예원·성황묘 → 페리 → 상하이타워</div></div>
+    <div class="sum" style="--c:var(--d3)"><div class="d">DAY 3 · 11/16 월</div><div class="t">상하이 디즈니랜드</div><div class="s">오픈런 → 하루 종일 → 불꽃놀이</div></div>
+    <div class="sum" style="--c:var(--d4)"><div class="d">DAY 4 · 11/17 화</div><div class="t">새벽 공항 이동</div><div class="s">05:15 숙소 출발 → PVG</div></div>
+  </section>
+
+  <div class="day" style="--c:var(--d1)">
+    <div class="dayhead"><b>DAY 1 · 11/14 (토) 도착 &amp; 와이탄 야경</b><span>일몰 약 16:55</span></div>
+    <table>
+      <tr><th>시간</th><th>일정</th><th>이동</th></tr>
+      <tr><td class="time">13:10</td><td>푸동공항(PVG) 도착 · 입국심사/수하물</td><td class="move">—</td></tr>
+      <tr><td class="time">14:30</td><td>숙소 이동</td><td class="move">택시/DiDi 약 60분 (¥200 내외)</td></tr>
+      <tr><td class="time">15:30</td><td>숙소 체크인 · 휴식</td><td class="move">—</td></tr>
+      <tr><td class="time">16:30</td><td><b>난징동루 보행가</b> 산책 (숙소에서 도보권)</td><td class="move">도보 5~10분</td></tr>
+      <tr><td class="time">17:00</td><td><b>와이탄(外滩)</b> 일몰 → 야경 점등(약 18:00)</td><td class="move">도보 10분</td></tr>
+      <tr><td class="time">18:00</td><td>저녁 식사 (난징동루/와이탄 인근)</td><td class="move">도보</td></tr>
+      <tr><td class="time">19:30</td><td><b>황푸강 야간 유람선</b> (약 40~60분) <span class="q">[선택]</span></td><td class="move">十六铺 부두, 택시 10분</td></tr>
+      <tr><td class="time">21:00</td><td>숙소 복귀</td><td class="move">택시 10분</td></tr>
+    </table>
+  </div>
+
+  <div class="day" style="--c:var(--d2)">
+    <div class="dayhead"><b>DAY 2 · 11/15 (일) 예원 &amp; 루자쭈이</b><span>도심 관광 Full</span></div>
+    <table>
+      <tr><th>시간</th><th>일정</th><th>이동</th></tr>
+      <tr><td class="time">08:00</td><td>아침 식사 (생지엔바오 등 현지 아침)</td><td class="move">—</td></tr>
+      <tr><td class="time">09:00</td><td><b>예원(豫园)</b> 정원 관람 (오픈 시간 맞춰 입장)</td><td class="move">택시 10분 / 지하철 10호선</td></tr>
+      <tr><td class="time">10:30</td><td><b>성황묘·예원상가</b> 구경 · 구곡교</td><td class="move">도보</td></tr>
+      <tr><td class="time">11:30</td><td>점심: 남상만두점(南翔馒头店) 샤오롱바오 <span class="q">[웨이팅 많음]</span></td><td class="move">도보</td></tr>
+      <tr><td class="time">13:00</td><td><b>페리로 황푸강 건너기</b> (아이들 재미 포인트, ¥2)</td><td class="move">东门路 → 东昌路 부두 5분</td></tr>
+      <tr><td class="time">13:30</td><td><b>상하이 해양수족관</b> 또는 <b>동방명주</b> <span class="q">[택1 질문]</span></td><td class="move">도보 10~15분</td></tr>
+      <tr><td class="time">16:00</td><td><b>상하이타워 118층 전망대</b> · 일몰 감상</td><td class="move">도보</td></tr>
+      <tr><td class="time">18:00</td><td>저녁 식사 (루자쭈이 IFC몰 등)</td><td class="move">도보</td></tr>
+      <tr><td class="time">19:30</td><td>숙소 복귀 · Day3 대비 일찍 취침</td><td class="move">지하철 2호선 → 南京东路</td></tr>
+    </table>
+  </div>
+
+  <div class="day" style="--c:var(--d3)">
+    <div class="dayhead"><b>DAY 3 · 11/16 (월) 상하이 디즈니랜드 Full</b><span>평일 → 주말보다 한산</span></div>
+    <table>
+      <tr><th>시간</th><th>일정</th><th>이동</th></tr>
+      <tr><td class="time">07:00</td><td>숙소 출발 (간단 아침 지참)</td><td class="move">지하철 2호선 직행 약 60분 / 택시 약 50분</td></tr>
+      <tr><td class="time">08:00</td><td>입장 대기 · 오픈런 (보통 08:30~09:00 오픈)</td><td class="move">—</td></tr>
+      <tr><td class="time">오전</td><td>인기 어트랙션 우선: <b>주토피아</b> · 트론 · 캐리비안의 해적 · 일곱 난쟁이 광산열차</td><td class="move">앱으로 대기시간 확인</td></tr>
+      <tr><td class="time">점심</td><td>파크 내 식사</td><td class="move">—</td></tr>
+      <tr><td class="time">오후</td><td>퍼레이드 · 판타지랜드 · 토이스토리랜드 · 캐릭터 만남</td><td class="move">—</td></tr>
+      <tr><td class="time">저녁</td><td>저녁 식사 → <b>성 앞 야간 불꽃/프로젝션 쇼</b></td><td class="move">—</td></tr>
+      <tr><td class="time">21:00</td><td>퇴장 · 숙소 복귀</td><td class="move">택시 약 50분 (퇴장 혼잡 고려)</td></tr>
+      <tr><td class="time">22:00</td><td><b>짐 정리 · 체크아웃 사전 처리 · 공항택시 예약 확인</b></td><td class="move">—</td></tr>
+    </table>
+  </div>
+
+  <div class="day" style="--c:var(--d4)">
+    <div class="dayhead"><b>DAY 4 · 11/17 (화) 귀국</b><span>국제선: 출발 2시간 전 도착 목표</span></div>
+    <table>
+      <tr><th>시간</th><th>일정</th><th>이동</th></tr>
+      <tr><td class="time">04:45</td><td>기상 · 최종 짐 확인</td><td class="move">—</td></tr>
+      <tr><td class="time">05:15</td><td>숙소 출발 (지하철·자기부상열차 첫차가 늦어 <b>택시 필수</b>)</td><td class="move">사전예약 DiDi/택시 약 50분</td></tr>
+      <tr><td class="time">06:10</td><td>PVG 도착 · 체크인 · 출국심사 · 공항 아침</td><td class="move">—</td></tr>
+      <tr><td class="time">08:25</td><td>✈️ 출발</td><td class="move">—</td></tr>
+    </table>
+  </div>
+
+  <div class="grid2">
+    <div class="note">
+      <h3>🧳 준비물 &amp; 체크리스트</h3>
+      <ul>
+        <li>여권 (한국인 무비자 입국 – 출발 전 최신 규정 재확인)</li>
+        <li>알리페이/위챗페이에 해외카드 연동 (현금 거의 안 씀)</li>
+        <li>DiDi(택시), 고덕지도/바이두지도, 디즈니 공식앱 설치</li>
+        <li>eSIM/로밍 (구글·카톡 사용 시 로밍/eSIM 권장)</li>
+        <li>11월 중순 기온 약 10~18°C → 경량패딩/겉옷</li>
+      </ul>
+    </div>
+    <div class="note">
+      <h3>❓ 확정 필요 사항</h3>
+      <ul>
+        <li>Day1 황푸강 유람선 탑승 여부</li>
+        <li>Day2 오후: 수족관 vs 동방명주 vs 다른 곳</li>
+        <li>디즈니 티켓 · 프리미어 액세스 구매 여부, 아이들 키</li>
+        <li>음식 선호 (매운 음식, 한식 필요 여부 등)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>
