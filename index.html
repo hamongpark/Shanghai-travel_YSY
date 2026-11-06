@@ -88,6 +88,13 @@
   .chip.tb{background:#fde2e0;color:#b3261e}
 
   .bottom{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+  #days2{margin-top:18px}
+  .pg{display:none;font-size:13px;font-weight:900;color:var(--muted)}
+  body.paged .pg{display:block}
+  body.paged [data-page]{display:none}
+  body.paged.p1 [data-page="1"], body.paged.p2 [data-page="2"], body.paged.p3 [data-page="3"]{display:grid}
+  body.paged.p1 #overview{display:block}
+  body.paged #days2{margin-top:0}
   .note{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px}
   .note h3{margin:0 0 8px;font-size:16px}
   .note ul{margin:0;padding-left:18px;font-size:13.5px}
@@ -103,8 +110,9 @@
 <div class="wrap">
   <header>
     <div>
-      <h1>상하이 가족여행 <span class="ver">v1.1</span></h1>
+      <h1>상하이 가족여행 <span class="ver">v1.2</span></h1>
       <div class="dates">2026. 11. 14 (토) – 11. 17 (화) · 3박 4일</div>
+      <div class="pg" id="pg"></div>
     </div>
     <div class="facts">
       <div class="fact"><b>인원</b>부부 + 아들 9세 + 딸 7세</div>
@@ -113,7 +121,7 @@
     </div>
   </header>
 
-  <section class="overview" id="overview">
+  <section class="overview" id="overview" data-page="1">
     <h2>한눈에 보기</h2>
     <div class="legend">
       <span><i style="background:var(--sight)"></i>관광</span>
@@ -126,9 +134,10 @@
     <div class="tt-scroll"><div class="tt" id="tt"></div></div>
   </section>
 
-  <section class="days" id="days"></section>
+  <section class="days" id="days" data-page="2"></section>
+  <section class="days" id="days2" data-page="3"></section>
 
-  <section class="bottom">
+  <section class="bottom" data-page="3">
     <div class="note">
       <h3>확정 필요 · 예약할 것</h3>
       <ul>
@@ -234,6 +243,7 @@ DAYS.forEach(d=>{
 const days=document.getElementById("days");
 DAYS.forEach(d=>{
   const card=document.createElement("article");card.className="day";
+  const target = (d.n==="DAY 3"||d.n==="DAY 4") ? document.getElementById("days2") : days;
   card.innerHTML=`<div class="dh" style="--c:${d.c}"><div class="n">${d.n} · ${d.date}</div><div class="ttl">${d.title}</div><div class="sub">${d.sub}</div></div>`;
   const ul=document.createElement("ul");ul.className="items";
   d.items.forEach(it=>{
@@ -245,8 +255,13 @@ DAYS.forEach(d=>{
       ${it.mv?`<div class="mv">${it.mv}</div>`:""}</div>`;
     ul.appendChild(li);
   });
-  card.appendChild(ul);days.appendChild(card);
+  card.appendChild(ul);target.appendChild(card);
 });
+// paging: #p1 / #p2 / #p3
+const TITLES={p1:"1 / 3 · 한눈에 보기",p2:"2 / 3 · DAY 1 · 2 상세",p3:"3 / 3 · DAY 3 · 4 상세 · 예약 · 준비물"};
+function applyPage(){const h=location.hash.slice(1);document.body.className="";
+  if(TITLES[h]){document.body.classList.add("paged",h);document.getElementById("pg").textContent=TITLES[h];}}
+window.addEventListener("hashchange",applyPage);applyPage();
 </script>
 </body>
 </html>
