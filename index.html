@@ -50,6 +50,7 @@
   .p1{background:#2e86ab}.p2{background:#3a9d5d}
   tr.opt1 td{background:rgba(46,134,171,.07)} tr.opt2 td{background:rgba(58,157,93,.07)}
   tr.tbd td{background:rgba(228,87,46,.07)}
+  tr.food td{background:rgba(232,170,40,.10)}
   .note{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
   .note h3{margin:0 0 8px;font-size:16px}
   .note ul{margin:0;padding-left:18px;font-size:14px}
@@ -68,7 +69,7 @@
     <div>
       <h1>🇨🇳 상하이 가족여행 <small>2026.11.14(토) – 11.17(화) · 3박 4일</small></h1>
       <div style="margin-top:8px">
-        <span class="badge draft">초안 v0.3</span>
+        <span class="badge draft">초안 v0.4</span>
         <span class="badge">👨‍👩‍👦‍👧 부부 + 아들 9세 + 딸 7세</span>
         <span class="badge">🏨 Liuhe Building 10F, 云南北路 59 (황푸구)</span>
       </div>
@@ -79,8 +80,8 @@
   </header>
 
   <section class="summary">
-    <div class="sum" style="--c:var(--d1)"><div class="d">DAY 1 · 11/14 토</div><div class="t">도착 &amp; 와이탄 야경</div><div class="s">난징동루 → 와이탄 → 황푸강 유람선</div></div>
-    <div class="sum" style="--c:var(--d2)"><div class="d">DAY 2 · 11/15 일</div><div class="t">예원 &amp; 루자쭈이</div><div class="s">예원 → 수족관 or 자연사박물관 → 상하이타워</div></div>
+    <div class="sum" style="--c:var(--d1)"><div class="d">DAY 1 · 11/14 토</div><div class="t">도착 &amp; 와이탄 야경</div><div class="s">와이탄 일몰 → 很久以前 양꼬치 → 유람선</div></div>
+    <div class="sum" style="--c:var(--d2)"><div class="d">DAY 2 · 11/15 일</div><div class="t">임정 · 예원 · 신천지</div><div class="s">大壶春 → 임시정부 → 예원 → 수족관/자연사 → 상하이타워 → 陶陶居</div></div>
     <div class="sum" style="--c:var(--d3)"><div class="d">DAY 3 · 11/16 월</div><div class="t">상하이 디즈니랜드</div><div class="s">하루 종일 (세부 일정 추후)</div></div>
     <div class="sum" style="--c:var(--d4)"><div class="d">DAY 4 · 11/17 화</div><div class="t">새벽 공항 이동</div><div class="s">05:15 숙소 출발 → PVG</div></div>
   </section>
@@ -92,27 +93,28 @@
       <tr><td class="time">13:10</td><td>푸동공항(PVG) 도착 · 입국심사/수하물</td><td class="move">—</td></tr>
       <tr><td class="time">14:30</td><td>숙소 이동</td><td class="move">택시/DiDi 약 60분 (¥200 내외)</td></tr>
       <tr><td class="time">15:30</td><td>숙소 체크인 · 휴식</td><td class="move">—</td></tr>
-      <tr><td class="time">16:30</td><td><b>난징동루 보행가</b> 산책 (숙소에서 도보권)</td><td class="move">도보 5~10분</td></tr>
-      <tr><td class="time">17:00</td><td><b>와이탄(外滩)</b> 일몰 → 야경 점등(약 18:00)</td><td class="move">도보 10분</td></tr>
-      <tr><td class="time">18:00</td><td class="meal">저녁 식사 (추가 예정)</td><td class="move">도보</td></tr>
-      <tr><td class="time">19:30</td><td><b>황푸강 야간 유람선</b> (약 40~60분) ✅</td><td class="move">十六铺 부두, 택시 10분</td></tr>
-      <tr><td class="time">21:00</td><td>숙소 복귀</td><td class="move">택시 10분</td></tr>
+      <tr><td class="time">16:20</td><td><b>난징동루 보행가</b> 산책 → 와이탄 방향</td><td class="move">도보 5~10분</td></tr>
+      <tr><td class="time">16:50</td><td><b>와이탄(外滩)</b> 일몰(16:55) → 야경 점등(약 18:00 전후)</td><td class="move">도보 10분</td></tr>
+      <tr class="food"><td class="time">18:00</td><td><b>저녁: 很久以前 羊肉串 (南京路 第一百货店)</b><br><span class="sub">南京东路830号 第一百货商业中心 B馆 6F · 11:00~새벽 · 숙소에서 도보 약 10분</span></td><td class="move">와이탄→난징동루 야경 걸으며 도보 20분 / 지하철 2호선 1정거장</td></tr>
+      <tr><td class="time">19:45</td><td><b>황푸강 야간 유람선</b> (약 40~60분) · 시간은 예매 시 확정</td><td class="move">十六铺 부두, 택시 약 15분</td></tr>
+      <tr><td class="time">21:00</td><td>숙소 복귀</td><td class="move">택시 10~15분</td></tr>
     </table>
   </div>
 
   <div class="day" style="--c:var(--d2)">
-    <div class="dayhead"><b>DAY 2 · 11/15 (일) 예원 &amp; 오후 택1 &amp; 루자쭈이</b><span>일몰 약 16:55 · 다음날 디즈니 → 일찍 복귀</span></div>
+    <div class="dayhead"><b>DAY 2 · 11/15 (일) 임시정부 · 예원 · 루자쭈이 · 신천지</b><span>일몰 약 16:55 · 다음날 디즈니 → 20시 복귀</span></div>
     <table>
       <tr><th>시간</th><th>일정</th><th>이동</th></tr>
-      <tr><td class="time">08:00</td><td class="meal">아침 식사 (추가 예정)</td><td class="move">—</td></tr>
-      <tr><td class="time">09:00</td><td><b>예원(豫园)</b> 정원 관람 (오픈 시간 맞춰 입장)</td><td class="move">택시 10분 / 지하철 10호선</td></tr>
-      <tr><td class="time">10:30</td><td><b>성황묘·예원상가</b> 구경 · 구곡교</td><td class="move">도보</td></tr>
-      <tr><td class="time">11:30</td><td class="meal">점심 식사 (추가 예정)</td><td class="move">도보</td></tr>
-      <tr class="opt1"><td class="time">13:00<br><span class="pill p1">1안</span></td><td><b>페리로 황푸강 건너기</b> (¥2) → <b>상하이 해양수족관</b> (해저터널, 약 2시간)<br><span class="sub">가족 약 ¥540~580 · 상하이타워까지 도보 5분, 동선 최적</span></td><td class="move">东门路 → 东昌路 부두 5분 + 도보 10분</td></tr>
-      <tr class="opt2"><td class="time">12:30<br><span class="pill p2">2안</span></td><td><b>상하이 자연사박물관</b> (공룡 화석·동물, 약 2~2.5시간) · <b>사전예약 필수</b><br><span class="sub">가족 약 ¥60 (130cm 미만 무료 정보 있음) · 이후 지하철로 루자쭈이 이동</span></td><td class="move">택시 20분 / 박물관→루자쭈이 지하철 약 30분</td></tr>
-      <tr><td class="time">16:15</td><td><b>상하이타워 118층 전망대</b> · 일몰(16:55) → 야경 점등까지</td><td class="move">도보 / 지하철 2호선 陆家嘴</td></tr>
-      <tr class="tbd"><td class="time">18:00</td><td><b>저녁 일정 검토 중</b> <span class="q">[결정 필요]</span></td><td class="move">—</td></tr>
-      <tr><td class="time">20:00</td><td>숙소 복귀 · 디즈니 대비 일찍 취침</td><td class="move">지하철 2호선 → 南京东路 / 택시 15분</td></tr>
+      <tr class="food"><td class="time">08:00</td><td><b>아침: 大壶春 생지엔 (四川中路店)</b><br><span class="sub">四川中路136号 · 08:00 오픈 · 미쉐린 빕구르망 · 생지엔 + 작은 훈툰</span></td><td class="move">숙소에서 도보 약 15분</td></tr>
+      <tr><td class="time">09:00</td><td><b>🇰🇷 대한민국 임시정부 청사</b> (马当路306弄4号) · 약 1시간<br><span class="sub">오전 09:00~11:30 (11:00 입장마감) / 오후 13:30~17:00 · 성인 ¥20 · 여권 지참</span></td><td class="move">택시 약 15분</td></tr>
+      <tr><td class="time">10:15</td><td><b>예원(豫园)</b> 정원 → <b>성황묘·예원상가</b> · 구곡교</td><td class="move">택시 약 10분</td></tr>
+      <tr><td class="time">12:00</td><td class="meal">점심 식사 (추가 예정)</td><td class="move">도보</td></tr>
+      <tr class="opt1"><td class="time">13:15<br><span class="pill p1">1안</span></td><td><b>페리로 황푸강 건너기</b> (¥2) → <b>상하이 해양수족관</b> (해저터널, 약 2시간)<br><span class="sub">가족 약 ¥540~580 · 상하이타워까지 도보 5분, 동선 최적</span></td><td class="move">东门路 → 东昌路 부두 5분 + 도보 10분</td></tr>
+      <tr class="opt2"><td class="time">13:15<br><span class="pill p2">2안</span></td><td><b>상하이 자연사박물관</b> (공룡 화석·동물, 약 2~2.5시간) · <b>사전예약 필수</b><br><span class="sub">가족 약 ¥60 (130cm 미만 무료 정보 있음) · 이후 지하철로 루자쭈이 이동</span></td><td class="move">예원→박물관 택시 20분 / 박물관→루자쭈이 지하철 약 30분</td></tr>
+      <tr><td class="time">16:15</td><td><b>상하이타워 118층 전망대</b> · 일몰(16:55) → 야경 점등까지<br><span class="sub">여기서 陶陶居 온라인 대기번호(大众点评/美团) 미리 받기</span></td><td class="move">도보 / 지하철 2호선 陆家嘴</td></tr>
+      <tr class="food"><td class="time">18:00</td><td><b>저녁: 陶陶居 (新天地店)</b> · 광둥식 딤섬<br><span class="sub">太仓路181弄 新天地北里 · 저녁 17:00~ · 주말 대기 길 수 있음 (최대 1~2시간 후기)</span></td><td class="move">택시 약 20분</td></tr>
+      <tr><td class="time">19:15</td><td><b>신천지(新天地)</b> 석고문 골목 야간 산책</td><td class="move">도보</td></tr>
+      <tr><td class="time">20:00</td><td>숙소 복귀 · 디즈니 대비 일찍 취침</td><td class="move">택시 약 15분</td></tr>
     </table>
   </div>
 
@@ -154,9 +156,9 @@
       <h3>❓ 확정 필요 사항</h3>
       <ul>
         <li>Day2 오후: 1안 수족관 / 2안 자연사박물관</li>
-        <li>Day2 저녁 일정</li>
-        <li>디즈니 티켓 구매 (날짜 지정, 미리 구매 권장)</li>
-        <li>식사 장소 (직접 추가 예정)</li>
+                <li>디즈니 티켓 구매 (날짜 지정, 미리 구매 권장)</li>
+        <li>Day2 점심 장소 (직접 추가 예정)</li>
+        <li>임시정부 청사 운영 재확인 (2026.8~9 보수휴관 이력)</li>
       </ul>
     </div>
   </div>
