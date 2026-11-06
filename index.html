@@ -44,6 +44,7 @@
   td.move{color:var(--muted);font-size:13px;width:200px}
   tr:last-child td{border-bottom:0}
   .q{color:var(--d1);font-weight:700}
+  .meal{color:var(--muted);font-style:italic}
   .note{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
   .note h3{margin:0 0 8px;font-size:16px}
   .note ul{margin:0;padding-left:18px;font-size:14px}
@@ -62,7 +63,7 @@
     <div>
       <h1>🇨🇳 상하이 가족여행 <small>2026.11.14(토) – 11.17(화) · 3박 4일</small></h1>
       <div style="margin-top:8px">
-        <span class="badge draft">초안 v0.1</span>
+        <span class="badge draft">초안 v0.2</span>
         <span class="badge">👨‍👩‍👦‍👧 부부 + 아들 9세 + 딸 7세</span>
         <span class="badge">🏨 Liuhe Building 10F, 云南北路 59 (황푸구)</span>
       </div>
@@ -74,7 +75,7 @@
 
   <section class="summary">
     <div class="sum" style="--c:var(--d1)"><div class="d">DAY 1 · 11/14 토</div><div class="t">도착 &amp; 와이탄 야경</div><div class="s">난징동루 → 와이탄 → 황푸강 유람선</div></div>
-    <div class="sum" style="--c:var(--d2)"><div class="d">DAY 2 · 11/15 일</div><div class="t">예원 &amp; 루자쭈이</div><div class="s">예원·성황묘 → 페리 → 상하이타워</div></div>
+    <div class="sum" style="--c:var(--d2)"><div class="d">DAY 2 · 11/15 일</div><div class="t">예원 &amp; 루자쭈이</div><div class="s">예원 → 페리 → 수족관 → 상하이타워</div></div>
     <div class="sum" style="--c:var(--d3)"><div class="d">DAY 3 · 11/16 월</div><div class="t">상하이 디즈니랜드</div><div class="s">오픈런 → 하루 종일 → 불꽃놀이</div></div>
     <div class="sum" style="--c:var(--d4)"><div class="d">DAY 4 · 11/17 화</div><div class="t">새벽 공항 이동</div><div class="s">05:15 숙소 출발 → PVG</div></div>
   </section>
@@ -88,8 +89,8 @@
       <tr><td class="time">15:30</td><td>숙소 체크인 · 휴식</td><td class="move">—</td></tr>
       <tr><td class="time">16:30</td><td><b>난징동루 보행가</b> 산책 (숙소에서 도보권)</td><td class="move">도보 5~10분</td></tr>
       <tr><td class="time">17:00</td><td><b>와이탄(外滩)</b> 일몰 → 야경 점등(약 18:00)</td><td class="move">도보 10분</td></tr>
-      <tr><td class="time">18:00</td><td>저녁 식사 (난징동루/와이탄 인근)</td><td class="move">도보</td></tr>
-      <tr><td class="time">19:30</td><td><b>황푸강 야간 유람선</b> (약 40~60분) <span class="q">[선택]</span></td><td class="move">十六铺 부두, 택시 10분</td></tr>
+      <tr><td class="time">18:00</td><td class="meal">🍽️ 저녁 식사 (추가 예정)</td><td class="move">도보</td></tr>
+      <tr><td class="time">19:30</td><td><b>황푸강 야간 유람선</b> (약 40~60분) ✅</td><td class="move">十六铺 부두, 택시 10분</td></tr>
       <tr><td class="time">21:00</td><td>숙소 복귀</td><td class="move">택시 10분</td></tr>
     </table>
   </div>
@@ -98,14 +99,14 @@
     <div class="dayhead"><b>DAY 2 · 11/15 (일) 예원 &amp; 루자쭈이</b><span>도심 관광 Full</span></div>
     <table>
       <tr><th>시간</th><th>일정</th><th>이동</th></tr>
-      <tr><td class="time">08:00</td><td>아침 식사 (생지엔바오 등 현지 아침)</td><td class="move">—</td></tr>
+      <tr><td class="time">08:00</td><td class="meal">🍽️ 아침 식사 (추가 예정)</td><td class="move">—</td></tr>
       <tr><td class="time">09:00</td><td><b>예원(豫园)</b> 정원 관람 (오픈 시간 맞춰 입장)</td><td class="move">택시 10분 / 지하철 10호선</td></tr>
       <tr><td class="time">10:30</td><td><b>성황묘·예원상가</b> 구경 · 구곡교</td><td class="move">도보</td></tr>
-      <tr><td class="time">11:30</td><td>점심: 남상만두점(南翔馒头店) 샤오롱바오 <span class="q">[웨이팅 많음]</span></td><td class="move">도보</td></tr>
+      <tr><td class="time">11:30</td><td class="meal">🍽️ 점심 식사 (추가 예정)</td><td class="move">도보</td></tr>
       <tr><td class="time">13:00</td><td><b>페리로 황푸강 건너기</b> (아이들 재미 포인트, ¥2)</td><td class="move">东门路 → 东昌路 부두 5분</td></tr>
-      <tr><td class="time">13:30</td><td><b>상하이 해양수족관</b> 또는 <b>동방명주</b> <span class="q">[택1 질문]</span></td><td class="move">도보 10~15분</td></tr>
+      <tr><td class="time">13:30</td><td><b>상하이 해양수족관</b> (해저터널, 약 2시간) <span class="q">[잠정]</span></td><td class="move">도보 10~15분</td></tr>
       <tr><td class="time">16:00</td><td><b>상하이타워 118층 전망대</b> · 일몰 감상</td><td class="move">도보</td></tr>
-      <tr><td class="time">18:00</td><td>저녁 식사 (루자쭈이 IFC몰 등)</td><td class="move">도보</td></tr>
+      <tr><td class="time">18:00</td><td class="meal">🍽️ 저녁 식사 (추가 예정)</td><td class="move">도보</td></tr>
       <tr><td class="time">19:30</td><td>숙소 복귀 · Day3 대비 일찍 취침</td><td class="move">지하철 2호선 → 南京东路</td></tr>
     </table>
   </div>
@@ -115,11 +116,11 @@
     <table>
       <tr><th>시간</th><th>일정</th><th>이동</th></tr>
       <tr><td class="time">07:00</td><td>숙소 출발 (간단 아침 지참)</td><td class="move">지하철 2호선 직행 약 60분 / 택시 약 50분</td></tr>
-      <tr><td class="time">08:00</td><td>입장 대기 · 오픈런 (보통 08:30~09:00 오픈)</td><td class="move">—</td></tr>
+      <tr><td class="time">08:00</td><td>입장 대기 · 오픈런 (보통 08:30~09:00 오픈) <span class="q">[티켓 미구매]</span></td><td class="move">—</td></tr>
       <tr><td class="time">오전</td><td>인기 어트랙션 우선: <b>주토피아</b> · 트론 · 캐리비안의 해적 · 일곱 난쟁이 광산열차</td><td class="move">앱으로 대기시간 확인</td></tr>
-      <tr><td class="time">점심</td><td>파크 내 식사</td><td class="move">—</td></tr>
+      <tr><td class="time">점심</td><td class="meal">🍽️ 점심 식사 (추가 예정)</td><td class="move">—</td></tr>
       <tr><td class="time">오후</td><td>퍼레이드 · 판타지랜드 · 토이스토리랜드 · 캐릭터 만남</td><td class="move">—</td></tr>
-      <tr><td class="time">저녁</td><td>저녁 식사 → <b>성 앞 야간 불꽃/프로젝션 쇼</b></td><td class="move">—</td></tr>
+      <tr><td class="time">저녁</td><td><span class="meal">🍽️ 저녁 식사 (추가 예정)</span> → <b>성 앞 야간 불꽃/프로젝션 쇼</b> <span class="q">[아이 체력 따라]</span></td><td class="move">—</td></tr>
       <tr><td class="time">21:00</td><td>퇴장 · 숙소 복귀</td><td class="move">택시 약 50분 (퇴장 혼잡 고려)</td></tr>
       <tr><td class="time">22:00</td><td><b>짐 정리 · 체크아웃 사전 처리 · 공항택시 예약 확인</b></td><td class="move">—</td></tr>
     </table>
@@ -150,10 +151,10 @@
     <div class="note">
       <h3>❓ 확정 필요 사항</h3>
       <ul>
-        <li>Day1 황푸강 유람선 탑승 여부</li>
-        <li>Day2 오후: 수족관 vs 동방명주 vs 다른 곳</li>
-        <li>디즈니 티켓 · 프리미어 액세스 구매 여부, 아이들 키</li>
-        <li>음식 선호 (매운 음식, 한식 필요 여부 등)</li>
+        <li>Day2 오후: 해양수족관 확정 여부</li>
+        <li>디즈니 티켓 구매 (날짜 지정, 미리 구매 권장)</li>
+        <li>디즈니 프리미어 액세스 · 아이들 키 (트론 122cm↑ 등)</li>
+        <li>식사 장소 (직접 추가 예정)</li>
       </ul>
     </div>
   </div>
