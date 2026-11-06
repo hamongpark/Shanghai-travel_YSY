@@ -8,58 +8,93 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#f6f3ee; --card:#ffffff; --ink:#1f2328; --muted:#6b7280; --line:#e7e2da;
-    --d1:#e4572e; --d2:#2e86ab; --d3:#7b4fd6; --d4:#6b7280;
-    --tag:#f1ede6;
+    --bg:#f4f1ec; --card:#ffffff; --ink:#1c1f24; --muted:#6b7280; --line:#e6e1d8; --soft:#f7f4ef;
+    --sight:#2f7fd1; --sight-bg:#e3effb;
+    --food:#e8833a; --food-bg:#fdeedd;
+    --move:#8a94a3; --move-bg:#eef0f3;
+    --fly:#5b4fc4; --fly-bg:#e9e6fb;
+    --rest:#3a9d6a; --rest-bg:#e2f4ea;
+    --tbd:#d9463b; --tbd-bg:#fff;
+    --d1:#e4572e; --d2:#2a86b0; --d3:#7b4fd6; --d4:#5f6b7a;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --bg:#16181c; --card:#1f2228; --ink:#eceff3; --muted:#a3aab5; --line:#30343c; --tag:#2a2e35;
+      --bg:#15171b; --card:#1e2127; --ink:#eceff3; --muted:#a2a9b4; --line:#30343c; --soft:#23272e;
+      --sight-bg:#1d3550; --food-bg:#45301d; --move-bg:#2b2f36; --fly-bg:#2c2852; --rest-bg:#1c3b2b; --tbd-bg:#1e2127;
     }
   }
   :root[data-theme="dark"]{
-    --bg:#16181c; --card:#1f2228; --ink:#eceff3; --muted:#a3aab5; --line:#30343c; --tag:#2a2e35;
+    --bg:#15171b; --card:#1e2127; --ink:#eceff3; --muted:#a2a9b4; --line:#30343c; --soft:#23272e;
+    --sight-bg:#1d3550; --food-bg:#45301d; --move-bg:#2b2f36; --fly-bg:#2c2852; --rest-bg:#1c3b2b; --tbd-bg:#1e2127;
   }
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);
-    font-family:"Noto Sans KR","WenQuanYi Zen Hei",system-ui,sans-serif;line-height:1.5}
-  .wrap{max-width:1100px;margin:0 auto;padding:32px 16px 48px}
-  header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:24px}
-  h1{font-size:34px;font-weight:900;margin:0;letter-spacing:-.5px}
-  h1 small{display:block;font-size:14px;font-weight:500;color:var(--muted);letter-spacing:0}
-  .badge{display:inline-block;background:var(--tag);border-radius:999px;padding:4px 12px;font-size:13px;margin:2px 4px 2px 0}
-  .draft{background:#ffe08a;color:#5a4400;font-weight:700}
-  .summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
-  .sum{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;border-top:5px solid var(--c)}
-  .sum .d{font-size:12px;color:var(--muted);font-weight:700}
-  .sum .t{font-size:17px;font-weight:900;margin:2px 0}
-  .sum .s{font-size:13px;color:var(--muted)}
-  .day{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:18px;overflow:hidden}
-  .dayhead{background:var(--c);color:#fff;padding:12px 18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-  .dayhead b{font-size:18px}
-  table{width:100%;border-collapse:collapse;font-size:14px}
-  th,td{padding:9px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-  th{font-size:12px;color:var(--muted);font-weight:700;background:var(--tag)}
-  td.time{white-space:nowrap;font-weight:700;width:110px}
-  td.move{color:var(--muted);font-size:13px;width:200px}
-  tr:last-child td{border-bottom:0}
-  .q{color:var(--d1);font-weight:700}
-  .meal{color:var(--muted);font-style:italic}
-  .sub{font-size:12px;color:var(--muted)}
-  .pill{display:inline-block;font-size:11px;font-weight:900;color:#fff;border-radius:6px;padding:1px 7px;margin-top:3px}
-  .p1{background:#2e86ab}.p2{background:#3a9d5d}
-  tr.opt1 td{background:rgba(46,134,171,.07)} tr.opt2 td{background:rgba(58,157,93,.07)}
-  tr.tbd td{background:rgba(228,87,46,.07)}
-  tr.food td{background:rgba(232,170,40,.10)}
-  .note{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+    font-family:"Noto Sans KR","WenQuanYi Zen Hei",system-ui,sans-serif;line-height:1.45}
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 16px 48px}
+
+  /* header */
+  header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:18px}
+  h1{font-size:36px;font-weight:900;margin:0;letter-spacing:-.8px}
+  .dates{font-size:15px;color:var(--muted);font-weight:500;margin-top:2px}
+  .facts{display:flex;flex-wrap:wrap;gap:8px}
+  .fact{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:13px}
+  .fact b{display:block;font-size:11px;color:var(--muted);font-weight:700;letter-spacing:.3px}
+  .ver{display:inline-block;background:#ffe08a;color:#5a4400;font-weight:900;font-size:12px;border-radius:999px;padding:2px 10px;vertical-align:middle;margin-left:8px;letter-spacing:0}
+
+  /* legend */
+  .legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--muted);margin:0 0 10px 2px}
+  .legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+
+  /* overview timetable */
+  .overview{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 16px 12px;margin-bottom:26px}
+  .overview h2{margin:0 0 10px;font-size:18px}
+  .tt-scroll{overflow-x:auto}
+  .tt{display:grid;grid-template-columns:44px repeat(4,minmax(150px,1fr));gap:0 10px;min-width:680px;padding-bottom:10px}
+  .tt-head{font-weight:900;font-size:15px;color:#fff;border-radius:10px;padding:8px 10px;margin-bottom:8px;background:var(--c)}
+  .tt-head small{display:block;font-weight:500;font-size:11px;opacity:.9}
+  .hours{position:relative}
+  .hours div{position:absolute;right:4px;font-size:11px;color:var(--muted);transform:translateY(-7px)}
+  .col{position:relative;border-radius:10px;background:
+      repeating-linear-gradient(to bottom, var(--line) 0 1px, transparent 1px var(--hh));}
+  .ev{position:absolute;left:3px;right:3px;border-radius:7px;padding:3px 7px;overflow:hidden;
+      font-size:12px;line-height:1.25;border-left:4px solid var(--k);background:var(--kb)}
+  .ev b{font-weight:700}
+  .ev .t{font-size:10.5px;color:var(--muted);font-weight:700;margin-right:4px}
+  .ev.tbd{border:2px dashed var(--tbd);background:var(--tbd-bg);color:var(--tbd);font-weight:700}
+  .ev.sm{display:flex;align-items:center;padding:0 7px;white-space:nowrap}
+  .ev.big{display:flex;align-items:center;justify-content:center;text-align:center;font-size:16px}
+
+  /* detail */
+  .days{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .day{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+  .dh{background:var(--c);color:#fff;padding:14px 18px}
+  .dh .n{font-size:12px;font-weight:700;opacity:.9;letter-spacing:.5px}
+  .dh .ttl{font-size:20px;font-weight:900;letter-spacing:-.3px}
+  .dh .sub{font-size:12px;opacity:.9}
+  .items{list-style:none;margin:0;padding:6px 0}
+  .it{display:grid;grid-template-columns:56px 1fr;gap:10px;padding:10px 16px;border-bottom:1px solid var(--line)}
+  .it:last-child{border-bottom:0}
+  .it .tm{font-weight:900;font-size:14px;padding-top:1px}
+  .it .body{border-left:4px solid var(--k);padding-left:10px}
+  .it .name{font-weight:700;font-size:15px}
+  .it .info{font-size:12.5px;color:var(--muted);margin-top:2px}
+  .it .mv{font-size:12px;color:var(--move);margin-top:3px}
+  .it .mv::before{content:"→ ";font-weight:700}
+  .it.tbd .name{color:var(--tbd)}
+  .chip{display:inline-block;font-size:10.5px;font-weight:900;border-radius:5px;padding:1px 6px;margin-left:6px;vertical-align:2px}
+  .chip.ok{background:var(--rest-bg);color:var(--rest)}
+  .chip.rsv{background:#fde2e0;color:#b3261e}
+  .chip.tb{background:#fde2e0;color:#b3261e}
+
+  .bottom{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+  .note{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px}
   .note h3{margin:0 0 8px;font-size:16px}
-  .note ul{margin:0;padding-left:18px;font-size:14px}
-  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-  @media (max-width:760px){
-    .summary{grid-template-columns:1fr 1fr}
-    .grid2{grid-template-columns:1fr}
-    td.move{width:auto}
-    th:nth-child(3),td.move{display:none}
+  .note ul{margin:0;padding-left:18px;font-size:13.5px}
+  .note li{margin:3px 0}
+
+  @media (max-width:820px){
+    .days,.bottom{grid-template-columns:1fr}
+    h1{font-size:28px}
   }
 </style>
 </head>
@@ -67,100 +102,149 @@
 <div class="wrap">
   <header>
     <div>
-      <h1>🇨🇳 상하이 가족여행 <small>2026.11.14(토) – 11.17(화) · 3박 4일</small></h1>
-      <div style="margin-top:8px">
-        <span class="badge draft">초안 v0.9.4</span>
-        <span class="badge">👨‍👩‍👦‍👧 부부 + 아들 9세 + 딸 7세</span>
-        <span class="badge">🏨 Liuhe Building 10F, 云南北路 59 (황푸구)</span>
-      </div>
+      <h1>상하이 가족여행 <span class="ver">v1.0</span></h1>
+      <div class="dates">2026. 11. 14 (토) – 11. 17 (화) · 3박 4일</div>
     </div>
-    <div style="font-size:13px;color:var(--muted);text-align:right">
-      ✈️ PVG 도착 11/14 13:10<br>✈️ PVG 출발 11/17 08:25
+    <div class="facts">
+      <div class="fact"><b>인원</b>부부 + 아들 9세 + 딸 7세</div>
+      <div class="fact"><b>숙소</b>Liuhe Building 10F, 云南北路59 (황푸구)</div>
+      <div class="fact"><b>항공</b>PVG 도착 11/14 13:10 · 출발 11/17 08:25</div>
     </div>
   </header>
 
-  <section class="summary">
-    <div class="sum" style="--c:var(--d1)"><div class="d">DAY 1 · 11/14 토</div><div class="t">도착 &amp; 와이탄 야경</div><div class="s">陶陶居 → 난징동루 → 와이탄 점등 → 很久以前</div></div>
-    <div class="sum" style="--c:var(--d2)"><div class="d">DAY 2 · 11/15 일</div><div class="t">임정 · 예원 · 유람선</div><div class="s">大壶春 → 임시정부·신천지 → 老吉士 → 자연사박물관 → 예원 → 유람선</div></div>
-    <div class="sum" style="--c:var(--d3)"><div class="d">DAY 3 · 11/16 월</div><div class="t">상하이 디즈니랜드</div><div class="s">하루 종일 (세부 일정 추후)</div></div>
-    <div class="sum" style="--c:var(--d4)"><div class="d">DAY 4 · 11/17 화</div><div class="t">새벽 공항 이동</div><div class="s">05:15 숙소 출발 → PVG</div></div>
+  <section class="overview" id="overview">
+    <h2>한눈에 보기</h2>
+    <div class="legend">
+      <span><i style="background:var(--sight)"></i>관광</span>
+      <span><i style="background:var(--food)"></i>식사</span>
+      <span><i style="background:var(--move)"></i>이동</span>
+      <span><i style="background:var(--fly)"></i>항공·공항</span>
+      <span><i style="background:var(--rest)"></i>숙소</span>
+      <span><i style="border:2px dashed var(--tbd);width:10px;height:10px"></i>미정</span>
+    </div>
+    <div class="tt-scroll"><div class="tt" id="tt"></div></div>
   </section>
 
-  <div class="day" style="--c:var(--d1)">
-    <div class="dayhead"><b>DAY 1 · 11/14 (토) 도착 · 陶陶居 · 난징동루 · 와이탄 야경</b><span>일몰 약 16:55 · 야경 점등 약 18:00</span></div>
-    <table>
-      <tr><th>시간</th><th>일정</th><th>이동</th></tr>
-      <tr><td class="time">13:10</td><td>푸동공항(PVG) 도착 · 입국심사/수하물</td><td class="move">—</td></tr>
-      <tr><td class="time">14:30</td><td>숙소 이동</td><td class="move">택시/DiDi 약 60분 (¥200 내외)</td></tr>
-      <tr><td class="time">15:30</td><td>숙소 체크인 · 짐 풀기</td><td class="move">—</td></tr>
-      <tr class="food"><td class="time">16:00</td><td><b>점심 겸 저녁: 陶陶居酒家 (新世界城店)</b> · 광둥식 딤섬 ✅<br><span class="sub">南京西路2-68号 新世界城 7F 7C01 · 10:00~21:30 (브레이크타임 없음) · 1인 약 ¥124 · 大众点评 예약/대기열 가능 · 地铁 人民广场역 130m</span></td><td class="move">숙소에서 도보 약 10분</td></tr>
-      <tr><td class="time">17:15</td><td><b>와이탄으로 이동</b><br><span class="sub"><b>여유 있으면</b> 난징동루 보행가 구경하며 도보 (약 30분) · 沈大成·第一食品 간식 구경 / <b>17:30 넘으면</b> 택시로 바로 이동 (약 10분)</span></td><td class="move">도보 30분 / 택시 10분</td></tr>
-      <tr><td class="time">18:00</td><td><b>와이탄(外滩)</b> 야경 점등 · 산책</td><td class="move">—</td></tr>
-      <tr class="food"><td class="time">19:30</td><td><b>저녁: 很久以前 羊肉串 (南京路 第一百货店)</b> ✅<br><span class="sub">南京路步行街 第一百货商业中心 B馆 6F · 11:00~새벽 03:00 · 1인 약 ¥99 · 실내 금연·아기의자 있음 · 추천: 呼伦贝尔羊肉串(양꼬치)·烤玉米粒(구운 옥수수)·雪糕(아이스크림) · 22시 이후엔 新市百店 KFC 옆 엘리베이터 이용 · 地铁 人民广场 19번 출구 220m</span></td><td class="move">와이탄 → 택시 약 10분 / 지하철 2호선</td></tr>
-      <tr><td class="time">21:00</td><td>숙소 복귀</td><td class="move">도보 약 10분</td></tr>
-    </table>
-  </div>
+  <section class="days" id="days"></section>
 
-  <div class="day" style="--c:var(--d2)">
-    <div class="dayhead"><b>DAY 2 · 11/15 (일) 임시정부 · 신천지 · 자연사박물관 · 예원 · 유람선</b><span>21시 전 숙소 복귀 → 디즈니 대비</span></div>
-    <table>
-      <tr><th>시간</th><th>일정</th><th>이동</th></tr>
-      <tr class="food"><td class="time">08:00</td><td><b>아침: 大壶春 생지엔 (四川中路店)</b> ✅<br><span class="sub">黄浦区四川中路136号 · 07:00~19:30 · 1인 약 ¥27 · 아기의자 있음 · 추천: 双拼虾仁生煎(새우+고기 생지엔)·鲜肉小馄饨(고기 작은 훈툰) · 세트 ¥20~24</span></td><td class="move">숙소에서 도보 약 15분</td></tr>
-      <tr><td class="time">09:00</td><td><b>대한민국 임시정부 청사</b> (马当路306弄4号) · 약 1시간<br><span class="sub">오전 09:00~11:30 (11:00 입장마감) · 성인 ¥20 · 여권 지참</span></td><td class="move">택시 약 15분</td></tr>
-      <tr><td class="time">10:00</td><td><b>신천지(新天地)</b> 석고문 골목·상점 구경</td><td class="move">도보 약 5분</td></tr>
-      <tr class="food"><td class="time">11:30</td><td><b>점심: 老吉士 (兴业太古汇店)</b> · 상하이 가정식(본방차이) ✅<br><span class="sub">静安区石门一路288号 兴业太古汇 3F L383·L387 · 점심 11:00~14:00 / 저녁 16:30~21:00 · 1인 약 ¥163 · 홍샤오러우(红烧肉)·게살두부(蟹粉豆腐) 추천 · 룸 있음</span></td><td class="move">지하철 13호선 新天地 → 南京西路 2정거장 (220m) / 택시 약 15분</td></tr>
-      <tr><td class="time">13:00</td><td><b>상하이 자연사박물관</b> (공룡 화석·동물, 약 1시간 30분) · <b>사전예약 필수</b><br><span class="sub">가족 약 ¥60 (130cm 미만 무료 정보 있음) · 14:30 출발</span></td><td class="move">지하철 13호선 南京西路 → 自然博物馆 1정거장 / 도보 약 15분</td></tr>
-      <tr><td class="time">15:00</td><td><b>예원(豫园)</b> 정원 관람 (약 1시간)<br><span class="sub">09:00~16:30 (16:00 입장마감) · 월요일 휴원 → 일요일은 OK</span></td><td class="move">박물관 → 택시 약 25분</td></tr>
-      <tr><td class="time">16:00</td><td><b>예원 앞 구경: 성황묘·예원상가·구곡교</b> · 해질녘(16:55) → 조명 점등 야경</td><td class="move">도보</td></tr>
-      <tr class="tbd"><td class="time">17:30</td><td><b>저녁 (미정)</b> · 예원 ~ 十六铺 부두 사이에서 찾기<br><span class="sub">후보: 外婆家 / 费大厨 예원·十六铺 인근 지점 (大众点评 확인 필요)</span></td><td class="move">도보</td></tr>
-      <tr><td class="time">19:00</td><td><b>황푸강 야간 유람선</b> (약 40~60분) · 와이탄 + 루자쭈이 야경 · 시간은 예매 시 확정</td><td class="move">十六铺 부두, 도보/택시 5분</td></tr>
-      <tr><td class="time">20:15</td><td>숙소 복귀 · 디즈니 대비 일찍 취침</td><td class="move">택시 약 10~15분</td></tr>
-    </table>
-  </div>
-
-  <div class="day" style="--c:var(--d3)">
-    <div class="dayhead"><b>DAY 3 · 11/16 (월) 상하이 디즈니랜드 Full</b><span>평일 → 주말보다 한산</span></div>
-    <table>
-      <tr><th>시간</th><th>일정</th><th>이동</th></tr>
-      <tr><td class="time">07:00</td><td>숙소 출발</td><td class="move">지하철 2호선 직행 약 60분 / 택시 약 50분</td></tr>
-      <tr><td class="time">08:00</td><td>입장 대기 → 개장 (보통 08:30~09:00)</td><td class="move">—</td></tr>
-      <tr><td class="time">종일</td><td><b>🏰 디즈니랜드 자유 일정</b> <span class="sub">(세부 일정은 추후 추가)</span></td><td class="move">—</td></tr>
-      <tr><td class="time">21:00</td><td>퇴장 · 숙소 복귀</td><td class="move">택시 약 50분 / 지하철 2호선</td></tr>
-      <tr><td class="time">22:00</td><td><b>짐 정리 · 체크아웃 사전 처리 · 공항택시 예약 확인</b></td><td class="move">—</td></tr>
-    </table>
-  </div>
-
-  <div class="day" style="--c:var(--d4)">
-    <div class="dayhead"><b>DAY 4 · 11/17 (화) 귀국</b><span>국제선: 출발 2시간 전 도착 목표</span></div>
-    <table>
-      <tr><th>시간</th><th>일정</th><th>이동</th></tr>
-      <tr><td class="time">04:45</td><td>기상 · 최종 짐 확인</td><td class="move">—</td></tr>
-      <tr><td class="time">05:15</td><td>숙소 출발 (지하철·자기부상열차 첫차가 늦어 <b>택시 필수</b>)</td><td class="move">사전예약 DiDi/택시 약 50분</td></tr>
-      <tr><td class="time">06:10</td><td>PVG 도착 · 체크인 · 출국심사 · 공항 아침</td><td class="move">—</td></tr>
-      <tr><td class="time">08:25</td><td>✈️ 출발</td><td class="move">—</td></tr>
-    </table>
-  </div>
-
-  <div class="grid2">
+  <section class="bottom">
     <div class="note">
-      <h3>🧳 준비물 &amp; 체크리스트</h3>
+      <h3>확정 필요 · 예약할 것</h3>
       <ul>
-        <li>여권 (한국인 무비자 입국 – 출발 전 최신 규정 재확인)</li>
-        <li>알리페이/위챗페이에 해외카드 연동 (현금 거의 안 씀)</li>
-        <li>DiDi(택시), 고덕지도/바이두지도, 디즈니 공식앱 설치</li>
-        <li>eSIM/로밍 (구글·카톡 사용 시 로밍/eSIM 권장)</li>
-        <li>11월 중순 기온 약 10~18°C → 경량패딩/겉옷</li>
-      </ul>
-    </div>
-    <div class="note">
-      <h3>❓ 확정 필요 사항</h3>
-      <ul>
-        <li>Day2 저녁 (예원 ~ 十六铺 인근)</li>
-        <li>예약: 老吉士 · 자연사박물관 · 유람선 · 디즈니 티켓</li>
+        <li><b>Day2 저녁</b> 식당 (예원 ~ 十六铺 부두 사이)</li>
+        <li><b>예약</b>: 陶陶居 · 老吉士 · 자연사박물관(필수) · 황푸강 유람선 · 디즈니 티켓</li>
         <li>임시정부 청사 운영 재확인 (2026.8~9 보수휴관 이력)</li>
+        <li>Day4 새벽 공항 택시 사전 예약</li>
       </ul>
     </div>
-  </div>
+    <div class="note">
+      <h3>준비물 · 체크리스트</h3>
+      <ul>
+        <li>여권 (한국인 무비자 입국 – 출발 전 최신 규정 확인)</li>
+        <li>알리페이/위챗페이에 해외카드 연동 (현금 거의 안 씀)</li>
+        <li>DiDi · 고덕지도 · 大众点评 · 디즈니 공식앱 설치</li>
+        <li>eSIM/로밍 (카톡·구글 사용 시 권장)</li>
+        <li>11월 중순 약 10~18°C → 경량패딩/겉옷</li>
+      </ul>
+    </div>
+  </section>
 </div>
+
+<script>
+// k: sight | food | move | fly | rest | tbd
+const DAYS = [
+  { n:"DAY 1", date:"11/14 (토)", c:"var(--d1)", title:"도착 · 와이탄 야경", sub:"陶陶居 → 난징동루 → 와이탄 점등 → 很久以前", items:[
+    {s:"13:10",e:"14:30",k:"fly", name:"푸동공항 도착 · 입국", short:"PVG 도착·입국"},
+    {s:"14:30",e:"15:30",k:"move",name:"숙소로 이동", short:"택시 → 숙소", mv:"택시/DiDi 약 60분 (¥200 내외)"},
+    {s:"15:30",e:"16:00",k:"rest",name:"체크인 · 짐 풀기", short:"체크인"},
+    {s:"16:00",e:"17:15",k:"food",name:"점심 겸 저녁 · 陶陶居酒家 (新世界城店)", short:"陶陶居 (딤섬)", ok:1,
+      info:"광둥식 딤섬 · 南京西路2-68号 新世界城 7F 7C01 · 10:00~21:30 (브레이크 없음) · 1인 ¥124 · 예약/대기열 가능", mv:"숙소에서 도보 약 10분"},
+    {s:"17:15",e:"18:00",k:"sight",name:"난징동루 보행가 → 와이탄", short:"난징동루 산책",
+      info:"여유 있으면 걸으며 구경 (沈大成·第一食品 간식) / 17:30 넘으면 택시", mv:"도보 30분 / 택시 10분"},
+    {s:"18:00",e:"19:15",k:"sight",name:"와이탄(外滩) 야경 점등 · 산책", short:"와이탄 야경"},
+    {s:"19:30",e:"21:00",k:"food",name:"저녁 · 很久以前 羊肉串 (南京路 第一百货店)", short:"很久以前 (양꼬치)", ok:1,
+      info:"第一百货 B관 6F · 11:00~03:00 · 1인 ¥99 · 금연·아기의자 · 추천: 呼伦贝尔羊肉串·烤玉米粒·雪糕", mv:"와이탄에서 택시 10분 / 숙소까지 도보 10분"},
+    {s:"21:00",e:"21:30",k:"rest",name:"숙소 복귀", short:"숙소"},
+  ]},
+  { n:"DAY 2", date:"11/15 (일)", c:"var(--d2)", title:"임시정부 · 예원 · 유람선", sub:"大壶春 → 임정·신천지 → 老吉士 → 자연사박물관 → 예원 → 유람선", items:[
+    {s:"08:00",e:"08:45",k:"food",name:"아침 · 大壶春 생지엔 (四川中路店)", short:"大壶春 (생지엔)", ok:1,
+      info:"四川中路136号 · 07:00~19:30 · 1인 ¥27 · 아기의자 · 추천: 双拼虾仁生煎·鲜肉小馄饨", mv:"숙소에서 도보 약 15분"},
+    {s:"09:00",e:"10:00",k:"sight",name:"대한민국 임시정부 청사", short:"임시정부 청사",
+      info:"马当路306弄4号 · 오전 09:00~11:30 (11:00 입장마감) · 성인 ¥20 · 여권 지참", mv:"택시 약 15분"},
+    {s:"10:00",e:"11:15",k:"sight",name:"신천지(新天地) 석고문 골목·상점", short:"신천지", mv:"도보 5분"},
+    {s:"11:30",e:"12:45",k:"food",name:"점심 · 老吉士 (兴业太古汇店)", short:"老吉士 (본방차이)", ok:1, rsv:1,
+      info:"石门一路288号 兴业太古汇 3F L383·L387 · 11:00~14:00 / 16:30~21:00 · 1인 ¥163 · 추천: 红烧肉·蟹粉豆腐", mv:"지하철 13호선 新天地 → 南京西路 2정거장"},
+    {s:"13:00",e:"14:30",k:"sight",name:"상하이 자연사박물관", short:"자연사박물관", rsv:1,
+      info:"공룡 화석·동물 · 가족 약 ¥60 (130cm 미만 무료 정보) · 14:30 출발", mv:"지하철 13호선 1정거장 / 도보 15분"},
+    {s:"15:00",e:"16:00",k:"sight",name:"예원(豫园) 정원", short:"예원 정원",
+      info:"09:00~16:30 (16:00 입장마감) · 월요일 휴원", mv:"택시 약 25분"},
+    {s:"16:00",e:"17:30",k:"sight",name:"성황묘 · 예원상가 · 구곡교", short:"예원상가·성황묘",
+      info:"해질녘(16:55) → 조명 점등 야경"},
+    {s:"17:30",e:"18:45",k:"tbd", name:"저녁 (미정)", short:"저녁 미정"},
+    {s:"19:00",e:"20:00",k:"sight",name:"황푸강 야간 유람선", short:"황푸강 유람선", rsv:1,
+      info:"와이탄 + 루자쭈이 야경 · 약 40~60분 · 시간은 예매 시 확정", mv:"十六铺 부두 도보/택시 5분"},
+    {s:"20:15",e:"20:45",k:"rest",name:"숙소 복귀 · 일찍 취침", short:"숙소", mv:"택시 10~15분"},
+  ]},
+  { n:"DAY 3", date:"11/16 (월)", c:"var(--d3)", title:"상하이 디즈니랜드", sub:"하루 종일 · 세부 일정은 추후", items:[
+    {s:"07:00",e:"08:00",k:"move",name:"디즈니로 이동", short:"이동", mv:"지하철 2호선 직행 약 60분 / 택시 약 50분"},
+    {s:"08:00",e:"21:00",k:"sight",name:"상하이 디즈니랜드 (종일)", short:"상하이 디즈니랜드", big:1, rsv:1,
+      info:"개장 보통 08:30~09:00 · 세부 일정은 추후 추가"},
+    {s:"21:00",e:"22:00",k:"move",name:"숙소 복귀", short:"복귀", mv:"택시 약 50분 / 지하철 2호선"},
+    {s:"22:00",e:"22:45",k:"rest",name:"짐 정리 · 체크아웃 준비 · 공항택시 확인", short:"짐 정리"},
+  ]},
+  { n:"DAY 4", date:"11/17 (화)", c:"var(--d4)", title:"귀국", sub:"국제선 · 출발 2시간 전 공항 도착", items:[
+    {s:"04:45",e:"05:15",k:"rest",name:"기상 · 최종 짐 확인", short:"기상"},
+    {s:"05:15",e:"06:10",k:"move",name:"공항으로 이동 (택시 필수)", short:"택시 → PVG", rsv:1,
+      info:"지하철·자기부상열차 첫차가 늦음", mv:"사전예약 DiDi/택시 약 50분"},
+    {s:"06:10",e:"08:25",k:"fly", name:"체크인 · 출국심사 · 공항 아침", short:"체크인·출국"},
+    {s:"08:25",e:"09:00",k:"fly", name:"출발", short:"출발"},
+  ]},
+];
+
+const H0=4, H1=23, PX=40; // hours range, px per hour
+const toH = t => { const [h,m]=t.split(":").map(Number); return h+m/60; };
+const kv = k => k==="tbd" ? "" : `--k:var(--${k});--kb:var(--${k}-bg)`;
+
+// timetable
+const tt=document.getElementById("tt");
+const height=(H1-H0)*PX;
+tt.appendChild(Object.assign(document.createElement("div")));
+DAYS.forEach(d=>{const h=document.createElement("div");h.className="tt-head";h.style.setProperty("--c",d.c);
+  h.innerHTML=`${d.n} · ${d.date}<small>${d.title}</small>`;tt.appendChild(h);});
+const hours=document.createElement("div");hours.className="hours";hours.style.height=height+"px";
+for(let h=H0;h<=H1;h++){const x=document.createElement("div");x.style.top=(h-H0)*PX+"px";x.textContent=String(h).padStart(2,"0")+":00";hours.appendChild(x);}
+tt.appendChild(hours);
+DAYS.forEach(d=>{
+  const col=document.createElement("div");col.className="col";col.style.height=height+"px";col.style.setProperty("--hh",PX+"px");
+  d.items.forEach(it=>{
+    const top=(toH(it.s)-H0)*PX, h=Math.max((toH(it.e)-toH(it.s))*PX-2,16);
+    const ev=document.createElement("div");
+    ev.className="ev"+(it.k==="tbd"?" tbd":"")+(it.big?" big":"")+(h<34?" sm":"");
+    ev.style.cssText=`top:${top}px;height:${h}px;${kv(it.k)}`;
+    ev.innerHTML = it.big ? `<div><span class="t">${it.s}~${it.e}</span><br><b>${it.short}</b></div>`
+                          : `<span class="t">${it.s}</span><b>${it.short}</b>`;
+    col.appendChild(ev);
+  });
+  tt.appendChild(col);
+});
+
+// detail cards
+const days=document.getElementById("days");
+DAYS.forEach(d=>{
+  const card=document.createElement("article");card.className="day";
+  card.innerHTML=`<div class="dh" style="--c:${d.c}"><div class="n">${d.n} · ${d.date}</div><div class="ttl">${d.title}</div><div class="sub">${d.sub}</div></div>`;
+  const ul=document.createElement("ul");ul.className="items";
+  d.items.forEach(it=>{
+    const li=document.createElement("li");li.className="it"+(it.k==="tbd"?" tbd":"");
+    const chips=(it.ok?'<span class="chip ok">확정</span>':'')+(it.rsv?'<span class="chip rsv">예약</span>':'');
+    li.innerHTML=`<div class="tm">${it.s}</div><div class="body" style="${it.k==="tbd"?"--k:var(--tbd)":kv(it.k)}">
+      <div class="name">${it.name}${chips}</div>
+      ${it.info?`<div class="info">${it.info}</div>`:""}
+      ${it.mv?`<div class="mv">${it.mv}</div>`:""}</div>`;
+    ul.appendChild(li);
+  });
+  card.appendChild(ul);days.appendChild(card);
+});
+</script>
 </body>
 </html>
